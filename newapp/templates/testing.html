@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<body>
+    <div class="vertical-menu">
+        <img id="logo" src="{% static 'images/logo.png' %}" alt="logo" width="250" height="180">
+        <a href="{% url 'dashboard2' %}"><span class="material-symbols-outlined">space_dashboard</span>Dashboard</a>
+        <a href="#" class="active"><span  class="material-symbols-outlined" id="settings">settings</span>Classes</a>
+        <a href="{% url 'index' %}"><span  class="material-symbols-outlined" id="settings">folder_open</span>Repository</a>
+        <a href="#"><span  class="material-symbols-outlined" id="settings">settings</span>Settings</a>
+        <a href="#"><span  class="material-symbols-outlined" id="settings">info</span>About</a>
+        <a class="logout"><span  class="material-symbols-outlined" id="settings">logout</span>Log Out</a>
+    </div>
+<div class="header">
+  <h1>Class List</h1>
+  <div class="header-right">
+    <a class="active" href="#home"><img src="{% static 'images/profile2.png' %}" width="40" height="40">John Dongle</a>
+  </div>
+</div>
+<div class="body">
+    <table style="width: 85%;">
+        <td style="vertical-align: top; border-width: 0px 5px 0px 0px">
+          <h3 class="attendancesheet">Attendance Sheet</h3>
+          <select id="country" name="country">
+            <option value="ABCD109.X4Am - W712/LAB7 ">ABCD109.X4Am - W712/LAB7 </option>
+            <option value="WFR125.Z4Am - Y216/LAB1">WFR125.Z4Am - Y216/LAB1</option>
+            <option value="ZAD115.C3Am - Z411/LAB4">ZAD115.C3Am - Z411/LAB4</option>
+          </select>
+          <div class="search">
+            <input type="text" id="searchbar" name="lastname" placeholder="Search"><br />
+          </div> 
+          <table style="margin-left: auto; margin-right: auto; font-family: 'Prompt', sans-serif; border: 1px solid grey;">
+            <tr class="tableheader">
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Course</th>
+                <th>P</th>
+                <th>A</th>
+                <th>L</th>
+            </tr>
+            {% for x in mem %}
+            <tr>
+              <div>
+                <td>{{x.id}}</td>
+                <td>{{x.firstname}}</td>
+                <td>{{x.lastname}}</td>
+                <td>{{x.country}}</td>
+                <td>
+                  <form action="{% url 'present' x.id %}" method="post">
+                      {% csrf_token %}
+                      <button id="Present" type="submit" onclick="this.style.backgroundColor='green'; totalpresent()"></button>
+                  </form>
+                </td>
+                <td>
+                    <form action="{% url 'absent' x.id %}" method="post">
+                        {% csrf_token %}
+                        <button id="Absent" type="submit" onclick="this.style.backgroundColor='red'; totalpresent()"></button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{% url 'late' x.id %}" method="post">
+                        {% csrf_token %}
+                        <button id="Late" type="submit" onclick="this.style.backgroundColor='yellow'; totalpresent()"></button>
+                    </form>
+                </td>
+              </div>
+            </tr>
+            {% endfor %}
+          </table>
+        </td>
+        <div>
+        <th id="room">
+          <table class="right_table">
+            <tr>
+              <div class="right_b">
+                
+              <td style="border-width: 0px"><button id="right_buttons"><a href="{% url 'testing' %}" class="material-symbols-outlined">Check</a>Save</button></td>
+              <td style="border-width: 0px"><button id="right_buttons"><a class="material-symbols-outlined">print</a>Download</button></td>
+              <td style="border-width: 0px"><button id="right_buttons"><a class="material-symbols-outlined">download</a>Print</button></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="summary">
+                <td id="room" colspan="3">
+                  <h3 class="right_header">Summary</h3>
+                  <dt class="right_header">Summary of students who are present, absent, and late in the class</dt>
+                  <div class="row">
+                    <div class="column">
+                      <p>Present in the Class</p>
+                      <p>Absent in the Class</p>
+                      <p>Late in the Class</p>
+                    </div>
+                    <div class="column">
+                      <p id="present_no">0</p>
+                      <p id="absent_no">0</p>
+                      <p id="late_no">0</p>
+                    </div>
+                  </div>
+                </td>
+              </div>
+            </tr>
+            <tr>
+              <div class="summary">
+                <td colspan="3" style="border-width: 0px">
+                  <h3 class="right_header">Candidates for AF</h3>
+                  <dt class="right_header">Summary of students who have been marked absent 3 or more times during the semester</dt>
+                  <table id="customers" border="1">
+                    <thead class="tableheader">
+                        <th>Name</th>
+                        <th>Days Absent</th>
+                        <th>Status</th>
+                    </thead>
+                    {% for x in mem %}
+                    <tr>
+                        {% if x.absent_count > 2 %}
+                        <td>{{x.firstname}} {{x.lastname}}</td>
+                        <td>{{x.absent_count}}</td>
+                        <td>
+                          <h3>AF</h3>
+                        {% endif %}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                </td>
+              </div>
+            </tr>
+          </table>
+        </th>
+      </div>
+    </table>
+</div>
+    <script>
+        let p = 0;
+        let a = 0;
+        let l = 0;
+        function totalpresent() {
+          p++; // Increment the sum by 1
+          document.getElementById("present_no").textContent = p; // Update the displayed value
+        }
+        function totalabsent() {
+          a++; // Increment the sum by 1
+          document.getElementById("absent_no").textContent = a; // Update the displayed value
+        }
+        function totallate() {
+          l++; // Increment the sum by 1
+          document.getElementById("late_no").textContent = l; // Update the displayed value
+        }
+        function calculate() {
+          let totalInfo = "Total present in the class: " + p + "<br>" +
+                          "absent: " + a + "<br>" +
+                          "late: " + l;
+          document.getElementById("calculate_total").innerHTML = totalInfo; // Update the displayed value
+        }
+        
+        function updateHash() {
+          window.location.hash = '#some-anchor';
+        }
+      </script>
+</body>
+</html>

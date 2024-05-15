@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            BEA
+        </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'BEA-Dashboard.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="BEA-Dashboard.js"></script>
+    </head>
+    <body>
+        <!--Wrap entire content-->
+        <div class="wrapper">
+            <!--left-sidebar for navigation-->
+            <div class="left-sideBar">
+                <div class="logo">
+                    <img src="../Pictures/BEA Logo.svg" id="logo">
+                </div>
+                
+                <!--insert image inside left-sidebar before navigation-->
+                <!--list for navigation-->
+                <ul>
+                    <div id="navigation">
+                        <!--insert image for each-->
+                        <li>
+                            <div class="iconAndNavigation">
+                                <img src="../Pictures/Dashboard Icon.svg" class="dashboardIcon">Dashboard
+                            </div>
+                            <div class="selectOrNot"></div>
+                        </li>
+                        <li>
+                            <div class="iconAndNavigation">
+                                <img src="../Pictures/Class List Icon.svg" class="classListIcon">Class List
+                            </div>
+                            <div class="selectOrNot"></div>
+                        </li>
+                        <li>
+                            <div class="iconAndNavigation">
+                                <img src="../Pictures/Calendar Icon.svg" class="calendarIcon">Calendar
+                            </div>
+                            <div class="selectOrNot"></div>
+                        </li>
+                        <li>
+                            <div class="iconAndNavigation">
+                                <img src="../Pictures/Repository Icon.svg" class="repositoryIcon">Repository
+                            </div>
+                            <div class="selectOrNot"></div>
+                        </li>
+                    </div>
+
+                    <hr id="navHR">
+
+                    <!--Insert horizontal line-->
+                    <div id="settingsAndAbout">
+                        <li>
+                            <div class="iconAndNavigation">
+                                <img src="../Pictures/Settings Icon.svg" class="repositoryIcon">Settings
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <div class="iconAndNavigation">
+                                <img src="../Pictures/About Icon.svg" class="repositoryIcon">About
+                            </div>
+                        </li>
+                    </div>
+                    <!--insert image for log out-->
+                    <div id="logOut">
+                        <li>
+                            <div class="iconAndNavigation">
+                                <img src="../Pictures/Log Out Icon.svg" class="repositoryIcon">Log Out
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+            <main>
+                <!--header content-->
+                <section id="header">
+                    <div id="dashboardText">
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div id="userProfileHeader">
+                        <div id="userInfoWrapper">
+                            <img src="../Pictures/Profile Icon.svg" class="profileIcon">
+                            <div class="userInfoTexts">
+                                <h3 class="fitText">John Dongle</h3>
+                                <p class="fitText">BS in Information System</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="mainContent">
+                    <div class="mainContentBox">
+                        <div id="welcome">
+                            <!--welcomeTextContainer for grouped flex manipulation-->
+                            <div class="welcomeTexts">
+                                <div id="welcomeTextContainer">
+                                    <h1 class="fitText", id="WelcomeText">Welcome</h1>
+                                    <h1 class="fitText", id="Name">, John Dongle</h1>
+                                </div>
+                                <!--used for 'getelementbyid' in javascript-->
+                                <div id="clock"></div>
+                                <!--temporary-->
+                                <div id="dateAndTimeContainerUnderWelcome">
+                                    <div class="currentDateFullContainer">
+                                        <img src="../Pictures/Calendar Icon.svg" class="calendarIcon">
+                                        <h4 class="currentDateClass" id="currentDateFull">May 2, 2024</h4>
+                                    </div>
+                                    <div class="currentTimeContainer">
+                                        <img src="../Pictures/Time Icon.svg" class="timeIcon">
+                                        <h4 id="currentTime">7:15 am</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="calendarWrapper">
+                            <div>
+                                <header>
+                                    <div class="chevron">
+                                        <span class="material-symbols-outlined">
+                                            chevron_left
+                                        </span>
+                                    </div>
+                                    <p class="currentDateClass" id="currentDate">
+                                        May 2024
+                                    </p>
+                                    <div class="chevron">
+                                        <span class="material-symbols-outlined">
+                                            chevron_right
+                                        </span>
+                                    </div>
+                                </header>
+                            </div>
+                            
+                            <div id="calendar">
+                                <ul class="weeks">
+                                    <li>Sun</li>
+                                    <li>Mon</li>
+                                    <li>Tue</li>
+                                    <li>Wed</li>
+                                    <li>Thurs</li>
+                                    <li>Fri</li>
+                                    <li>Sat</li>
+                                </ul>
+                                <ul class="days">
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li>31</li>
+                                    <li>1</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mainContentBox">
+                        <div id="upcomingClass">
+                            <!--Not static content-->
+                            <div class="upcomingClassTextContainer">
+                                <h4>Upcoming Classes</h4>
+                            </div>
+                            <div id="classDetails">
+                                <img src="../Pictures/Purple and Lilac Image(1).svg" id="cowPurpleImg">
+                                <div class="textContent">
+                                    <h4 id="upcomingClassName">Physical Fitness 4</h4>
+                                    <div class="sectionAndRoomAndTime">
+                                        <p id="upcomingClassSection" style="display:inline">ABCD109.X4Am</p> - 
+                                        <p id="upcomingClassRoom" style="display:inline">W172/LAB7</p>
+
+                                        <div class="classTime">
+                                            <img src="../Pictures/Time Icon.svg" class="timeIcon">
+                                            <p id="startTime">
+                                                8:00 am
+                                            </p> - 
+                                            <p id="endTime">
+                                                11:00 am
+                                            </p>
+                                        </div>
+                                        <div class="alignRight">
+                                            <img src="../Pictures/Group Of People Icon.svg" class="groupOfPeopleIcon">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <!--Clock image-->
+                                
+                                <!--group of people image-->
+                            </div>
+                        </div>
+                        <!--Schedule Table-->
+                        <div class="schedAndAnnouncement">
+                            <div id="schedule">
+                                <h4>Schedule</h4>
+                                <!--temporary. Not static -->
+                                <table id="scheduleTable">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Subject
+                                            </th>
+                                            <th>
+                                                Room
+                                            </th>
+                                            <th>
+                                                Time
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                ABCD109.X4Am
+                                            </td>
+                                            <td>
+                                                W712/LAB7
+                                            </td>
+                                            <td>
+                                                8:30 - 11:00 am
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                WFR125.Z3Am
+                                            </td>
+                                            <td>
+                                                Y216/LAB1
+                                            </td>
+                                            <td>
+                                                1:30 - 3:00 pm
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                ONGFR115.C3Am
+                                            </td>
+                                            <td>
+                                                Z411/LAB4
+                                            </td>
+                                            <td>
+                                                7:30 - 9:00 pm
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <form action="API" id="announcementForm" action="" method="POST">
+                                <div class="announcementClassAndSectionSchedContainer">
+                                    <div class="announcementTextContainerDiv">
+                                        <textarea id="announcementTextArea" name="announcement" placeholder="Make an announcement" class="announcementTextContainer"></textarea>
+                                    </div>
+                                    <div class="classAndSectionAndPostschedule">
+                                        <div class="classAndSection">
+                                            <label>
+                                                <input type="checkbox" id="subjectCheckbox">
+                                                <span id="subject">Trends in Application Development</span>
+                                                <span>-</span> <!-- Separator -->
+                                                <span id="section">N3am</span> 
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="postschedule">
+                                            <label for="post-time"></label>
+                                            <input type="time" id="post-time" name="post-time">
+                                        </div>
+                                        <input type="submit" value="Submit">
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <div id="events">
+                            <div id="eventBox">
+                                <h4>Events</h4>
+                                <!--add image and trash-->
+                                <!--Not static content-->
+                                <div class="specificEventWithDayBox">
+                                    <p class="eventDay">Today</p>
+                                    <div class="specificEvent">
+                                        <p class="eventType">Meeting</p>
+                                        <p class="eventTime">10:00 am</p>
+                                    </div>
+                                </div>
+                                <div class="specificEventWithDayBox">
+                                    <p class="eventDay">Wednesday</p>
+                                    <div class="specificEvent">
+                                        <p class="eventType">
+                                            Report</p>
+                                        <p class="eventTime">
+                                            1:00pam
+                                        </p>
+                                    </div>
+                                    <div class="specificEvent">
+                                        <p class="eventType">
+                                            Evaluation</p>
+                                        <p class="eventTime">
+                                            4:30 pm
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+    </body>
+</html>

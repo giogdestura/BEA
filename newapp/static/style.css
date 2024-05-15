@@ -1,0 +1,332 @@
+.container {
+    margin: 80px 240px 60px 240px;
+    padding: 0px 100px 100px 100px;
+}
+
+#customers {
+    font-family: 'Prompt', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid rgb(17, 4, 4);
+    padding: 10px;
+    text-align: center;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding: 20px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+}
+
+
+#customers #up {
+    background-color: blue;
+    border-radius: 5px;
+    padding: 12px;
+    color: white;
+}
+
+#customers #del {
+    background-color: red;
+    border-radius: 5px;
+    padding: 12px;
+    color: white;
+    
+}
+
+#Present {
+    background-color: white; /* Green */
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+  }
+  #Absent {
+    background-color: white; /* Green */
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+  }
+  #Late {
+    background-color: white; /* Green */
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  * {box-sizing: border-box;}
+.header {
+  overflow: hidden;
+  background-color: #220950;
+  padding: 20px 10px;
+  border-bottom: 5px solid rgb(216, 215, 215);
+}
+.header h1 {
+  float: left;
+  color: white;
+  text-align: center;
+  width: calc(100% - 500px); /* Adjust for sidebar width */
+  left: 500px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+}
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  line-height: 25px;
+  border-radius: 14px;
+  padding: 20px;
+  width: calc(100% - 500px); /* Adjust for sidebar width */
+  position: top;
+  left: 500px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+}
+.header a.logo {
+  color: black;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  border-radius: 14px;
+}
+.header a:hover {
+  opacity: 25%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  color: white;
+  border-radius: 14px;
+}
+.header a.active {
+  color: black;
+  width: 100%;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  border-radius: 14px;
+}
+.header-right {
+  float: right;
+  color: black;
+  background-color: white;
+  border-radius: 14px;
+}
+.header img {
+  vertical-align: middle;
+}
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.vertical-menu {
+  width: 250px;
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  overflow: auto;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  vertical-align: middle;
+  border-right: 5px solid rgb(216, 215, 215);
+}
+
+#logo {
+  border-bottom: 5px solid rgb(216, 215, 215);
+}
+.vertical-menu a {
+  color: black;
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  opacity: 75%;
+}
+.vertical-menu a:hover {
+  background-color: #220950;
+  color: white;
+  opacity: 0.5;
+}
+.vertical-menu a.active {
+  background-color: #220950;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  opacity: 100%;
+}
+.body {
+  position: relative;
+  left: 255px;
+  background-color: white;
+}
+.logout {
+  color: white;
+  position: right;
+}
+.attendancesheet {
+  opacity: 0.5;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+}
+select {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  padding: 8px 10px;
+  width: 700px;
+  border-radius: 14px;
+}
+#searchbar {
+  font-size: 15px;
+  font-family: 'Prompt', sans-serif;
+  padding: 8px 10px;
+  width: 350px;
+  border-radius: 14px;
+  margin-top: 5px;
+  text-align: left;
+}
+table {
+  font-size: 12px;
+  font-family: 'Quicksand';
+  width: 900px;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+.tableheader {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+}
+th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#room {
+  border: 0px;
+}
+
+td {
+  border: 1px solid rgb(216, 215, 215);
+  padding: 10px;
+  text-align: center;
+  height: 55px;
+}
+.name {
+  width: 350px;
+}
+#Present {
+  background-color: white; /* Green */
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+}
+#Absent {
+  background-color: white; /* Green */
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+}
+#Late {
+  background-color: white; /* Green */
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+}
+#time {
+  border: none;
+  height: 100%;
+  width: 50px;
+  outline: none;
+}
+#calculate {
+  border: 1px solid black;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  height: 60px;
+}
+#calculate_total {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Quicksand';
+}
+#right_buttons {
+  border: 1px solid black;
+  background-color: #220950;
+  border-radius: 14px;
+  font-size: 12px;
+  color: white;
+  font-family: 'Prompt', sans-serif;
+  border: 1px solid #c3c3c3;
+  /*justify-content: space-around;*/
+  width: 100px;
+  height: 80px;
+}
+a.material-symbols-outlined {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.right_header {
+  padding-left: 25px;
+  text-align: left;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.right_table {
+  width: 100%;
+}
+
+span.material-symbols-outlined {
+  float: left;
+  margin-right: 20px;
+  display: inline;
+  vertical-align: 0.2em;
+}
+
+.table_left {
+  vertical-align: top;
+}
+
+.Home {
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Quicksand';
+  color: #220950;
+}
